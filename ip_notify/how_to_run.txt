@@ -1,0 +1,28 @@
+# Readme file for running the script
+# author : Gaurav Gupta
+# email : gdgupta11@hotmail.com
+# Licence : GPL 3.0
+
+What it does ? 
+If you are running nginx on any of your servers and need to monitor logs periodically that what response codes people are getting or 
+whether they are abusing or scraping your blog or webpage, you can use this. This is not real time but sends your consolidated report of all
+response codes against IP addresses acessing them every hour.
+
+It sends out emails only when if someone is accessing your page more than 10 times, that is configurable in script. If it is less than that
+then it will log details in /var/log/logging_notifyip_address.log ( make sure of permissions of this file )
+
+1) Need to install the required python packages using requirement.txt file, if you are doing that using virtualenv, that is best. 
+
+2) Need to have a gmail account from which you will be sending emails to your admin account. 
+
+3) Need to set this gmail account ID and password in your os environment. You can set them permanently in your shell environment in .bashrc file.
+
+4) Once above is set then you should be good to go. 
+
+5) You can run this using cron also every hour automatically, for that you need to set cron job to run every hour. Cronjob has a issue that
+it cannot access your environment variables because when it runs it does not have any shell. So for fixing that you need to fix your .bashrc file where
+it does not spawn shell for non users. Else you can directly mention gmail user ID and password in file ( which is not recommeded way of doing it )
+
+Example : 
+
+02 * * * * source $HOME/.bashrc; /export/home/user1/small_scripts/flask/bin/python /export/home/user1/small_scripts/notify_ipaddress.py
