@@ -1,5 +1,3 @@
-#!/usr/bin/bash
-
 # using python 2.7
 # author : Gaurav Gupta
 # email : gdgupta11@hotmail.com
