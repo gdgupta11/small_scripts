@@ -1,0 +1,11 @@
+Currently this script works with downloading songs from http://mymp3song.org/ only. 
+
+1) Install python libraries in requirement.txt file
+
+2) Go to http://mymp3song.org/ 
+
+3) Select any album you want to download ex : "http://mymp3song.org/filelist/7660/bareilly_ki_barfi_%282017%29_%3A_mp3_songs/new2old/1" 
+
+4) on command line 
+
+# python get_mp3.py -u "http://mymp3song.org/filelist/7660/bareilly_ki_barfi_%282017%29_%3A_mp3_songs/new2old/1" -f "/export/home/gg951x/songs/" -m "Bareilly"
